@@ -12,7 +12,7 @@ export class News extends Component {
 
     constructor(props) {
 
-        super(props);
+        super(props); //for use props within constructor
         this.state = {
             data: [],
             page: 1,
