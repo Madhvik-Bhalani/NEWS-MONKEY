@@ -19,7 +19,6 @@ export class App extends Component {
   }
   setprogress = (prog) => {
     this.setState({ progress: prog })
-
   }
 
   render() {
@@ -33,7 +32,7 @@ export class App extends Component {
             height={3}
             progress={this.state.progress}
           />
-          <Routes>
+          <Routes> {/*same cmp.. with diff.. data [pass KEY for each cmp..]*/}
             <Route exact path="/" element={<News setprogress={this.setprogress} pagesize={this.pagesize} key="general" apikey={this.apikey} category={"general"} country={this.country} bg="dark" />} />
             <Route exact path="/business" element={<News setprogress={this.setprogress} key="business" pagesize={this.pagesize} apikey={this.apikey} category={"business"} country={this.country} bg="primary" />} />
             <Route exact path="/entertainment" element={<News setprogress={this.setprogress} key="entertainment" pagesize={this.pagesize} apikey={this.apikey} category={"entertainment"} country={this.country} bg="info" />} />

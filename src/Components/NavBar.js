@@ -14,23 +14,18 @@ export class NavBar extends Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <Link  className="nav-link text-capitalize" aria-current="page"  to="/">Home</Link>
+                                    <Link className="nav-link text-capitalize" aria-current="page" to="/">Home</Link>
                                 </li>
-
                                 <li className='nav-item text-capitalize'> <Link className='nav-link' to="/business"> business</Link></li>
                                 <li className='nav-item text-capitalize'> <Link className='nav-link' to="/entertainment"> entertainment</Link></li>
-
-
                                 <li className='nav-item text-capitalize'> <Link className='nav-link' to="/health"> health</Link></li>
                                 <li className='nav-item text-capitalize'> <Link className='nav-link' to="/science"> science</Link></li>
                                 <li className='nav-item text-capitalize'> <Link className='nav-link' to="/sports"> sports</Link></li>
                                 <li className='nav-item text-capitalize'> <Link className='nav-link' to="/technology"> technology</Link></li>
-
-
                             </ul>
                             <form className="d-flex">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-light" type="submit">Search</button>
+                                <button className="btn btn-outline-light" type="button">Search</button>
                             </form>
                         </div>
                     </div>

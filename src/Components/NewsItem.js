@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import News from '../asset/news.jpg'
 
 export class NewsItem extends Component {
 
@@ -8,9 +9,9 @@ export class NewsItem extends Component {
         return (
             <>
 
-                <div className="card border-2" style={{ width: "300px", borderRadius: "6px", boxShadow: "1px 1px 1px 1px gray" }}>
+                <div className="card border-2" style={{ width: "340px", borderRadius: "6px", boxShadow: "1px 1px 1px 1px gray" }}>
                     
-                    <img src={this.props.imgurl ? this.props.imgurl : "https://cdn.pixabay.com/photo/2015/11/03/09/00/browse-1019916_960_720.jpg"} className="card-img-top" alt="News" style={{ height: "160px" }} />
+                    <img src={this.props.imgurl ? this.props.imgurl : News} className="card-img-top" alt="News" style={{ height: "160px" }} />
 
                     <span className={`position-relative  border translate-middle badge rounded-pill bg-${this.props.bg}`} style={{zIndex:"1",width:"48%",left:"75%",top:"2.5%",overflow:"hidden"}}>
                         {this.props.source}

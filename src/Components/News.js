@@ -17,7 +17,7 @@ export class News extends Component {
             data: [],
             page: 1,
             loading: false,
-            bg: '',
+            bg: '',            //for source label
             totalres: 0
         }
         // this.nextHandler = this.nextHandler.bind(this);
@@ -30,7 +30,7 @@ export class News extends Component {
         this.props.setprogress(25)
         const data = await fetch(`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apikey}&page=${this.state.page || pageno}&pageSize=${this.props.pagesize}`)
 
-
+        // console.log(`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apikey}&page=${this.state.page || pageno}&pageSize=${this.props.pagesize}`);
         this.props.setprogress(50)
         const finaldata = await data.json();
         this.props.setprogress(75)
@@ -67,17 +67,17 @@ export class News extends Component {
         }))
     }
 
-    fetchMoreData = async () => {
+    // fetchMoreData = async () => {
 
-        this.setState({ page: this.state.page + 1 }, (async () => {
+    //     this.setState({ page: this.state.page + 1 }, (async () => {
 
-            const data = await fetch(`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apikey}&page=${this.state.page}&pageSize=${this.props.pagesize}`)
+    //         const data = await fetch(`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apikey}&page=${this.state.page}&pageSize=${this.props.pagesize}`)
 
-            const finaldata = await data.json();
-            this.setState({ data: this.state.data.concat(finaldata.articles), totalres: finaldata.totalResults, bg: this.props.bg })
-        }))
+    //         const finaldata = await data.json();
+    //         this.setState({ data: this.state.data.concat(finaldata.articles), totalres: finaldata.totalResults, bg: this.props.bg })
+    //     }))
 
-    } //for infinite scroll
+    // } //for infinite scroll
     render() {
         return (
             <>
@@ -130,15 +130,13 @@ News.propTypes = {
     apikey: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     pagesize: PropTypes.number.isRequired,
-    con: PropTypes.string.isRequired
-};
+    country: PropTypes.string.isRequired
+}
 
 News.defaultProps = {
-
     category: "general",
-    pagesize: 7,
-    con: "in"
-
+    pagesize: 11,
+    country: "in"
 }
 
 export default News

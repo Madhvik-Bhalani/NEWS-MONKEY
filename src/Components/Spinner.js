@@ -6,8 +6,7 @@ export class Spinner extends Component {
         return (
             <>
                 <div style={{ height: "450px" }} className="container box d-flex justify-content-center align-items-center">
-
-                    <img src={loader} alt="" />
+                    <img src={loader} alt="Spinner" />
                 </div>
             </>
         )
